@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaAvroReader/JavaAvroReader.iml" filepath="$PROJECT_DIR$/JavaAvroReader/JavaAvroReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaExamples.iml" filepath="$PROJECT_DIR$/JavaExamples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyWebApp/MyWebApp.iml" filepath="$PROJECT_DIR$/MyWebApp/MyWebApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/RssReaderExample/RssReaderExample.iml" filepath="$PROJECT_DIR$/RssReaderExample/RssReaderExample.iml" />
     </modules>
   </component>
