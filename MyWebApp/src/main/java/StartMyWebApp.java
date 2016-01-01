@@ -10,25 +10,31 @@ public class StartMyWebApp
 {
     public static void main(String[] args) throws Exception
     {
-        Server server = new Server(8888);
-        RolloverFileOutputStream os = new RolloverFileOutputStream("yyyy_mm_dd_mywebapp.log", true);
-        PrintStream logStream = new PrintStream(os);
-        System.setOut(logStream);
-        System.setErr(logStream);
+        Server server1 = new Server(8888);
+        RolloverFileOutputStream os1 = new RolloverFileOutputStream("yyyy_mm_dd_mywebapp1.log", true);
+        PrintStream logStream1 = new PrintStream(os1);
+        System.setOut(logStream1);
+        System.setErr(logStream1);
 
-        String wardir = "/home/hduser/IdeaProjects/JavaExamples/MyWebApp/src/main/webapp/";
+        String workingDir = System.getProperty("user.dir");
+        String wardir = workingDir + "/MyWebApp/src/main/webapp/";
 
-        WebAppContext context = new WebAppContext();
+        WebAppContext context1 = new WebAppContext();
 
-        context.setResourceBase(wardir);
-        context.setParentLoaderPriority(true);
-        server.setHandler(context);
+        context1.setResourceBase(wardir);
+        context1.setParentLoaderPriority(true);
+        server1.setHandler(context1);
 
-        server.start();
+        server1.start();
 
-        Logger log = LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
+        Logger log1 = LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
 
-        log.info("**************** Embedded Jetty logging started *********************");
-        server.join();
+        log1.info("**************** Embedded Jetty logging started *********************");
+
+        for(int i = 0; i < 100 ; i++){
+
+            log1.info(String.valueOf(i));
+        }
+        server1.join();
     }
 }
